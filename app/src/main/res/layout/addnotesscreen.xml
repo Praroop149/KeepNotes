@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+
+xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="myViewModel"
+            type="com.example.skilltest.viewmodel.NoteViewModel">
+        </variable>
+    </data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="60dip">
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dip"
+        android:src="@drawable/ic_arrow"
+        android:layout_width="25dip"
+        android:layout_height="25dip">
+
+    </ImageView>
+    <TextView
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/iv_back"
+        android:textSize="18dip"
+        android:layout_marginLeft="10dip"
+        android:fontFamily="@font/opensans_regular"
+        android:id="@+id/text_head_title"
+        android:textColor="#1D1D1D"
+        android:hint="Date"
+        android:background="@android:color/transparent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+    <ImageView
+        android:id="@+id/iv_redo"
+        android:layout_toLeftOf="@+id/iv_undo"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dip"
+        android:layout_marginLeft="10dip"
+        android:src="@drawable/ic_redo"
+        android:layout_width="25dip"
+        android:layout_height="25dip">
+
+    </ImageView>
+    <ImageView
+        android:id="@+id/iv_undo"
+        android:layout_toLeftOf="@+id/iv_tick"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dip"
+        android:layout_marginLeft="10dip"
+        android:src="@drawable/ic_undo"
+        android:layout_width="25dip"
+        android:layout_height="25dip">
+
+    </ImageView>
+    <ImageView
+        android:id="@+id/iv_tick"
+        android:onClick="@{()->myViewModel.saveOrUpdate()}"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dip"
+        android:layout_marginLeft="10dip"
+        android:src="@drawable/ic_tick"
+        android:layout_width="25dip"
+        android:layout_height="25dip">
+
+    </ImageView>
+</RelativeLayout>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <TextView
+                android:onClick="@{()->myViewModel.savedate()}"
+                android:textSize="15dip"
+                android:text="@={myViewModel.inputDate}"
+                android:fontFamily="@font/opensans_regular"
+                android:id="@+id/text_date"
+                android:textColor="#1D1D1D"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:layout_marginTop="20dip"
+                android:paddingLeft="10dip"
+                android:hint="Date"
+                android:background="@android:color/transparent"
+                android:layout_width="fill_parent"
+                android:layout_height="30dip">
+
+            </TextView>
+            <EditText
+                android:textSize="20dip"
+                android:paddingLeft="10dip"
+                android:text="@={myViewModel.inputTitle}"
+                android:fontFamily="@font/opensans_regular"
+                android:id="@+id/text_title"
+                android:textColor="#1D1D1D"
+                android:maxLines="2"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:layout_marginTop="10dip"
+                android:hint="Title here..."
+                android:background="@android:color/transparent"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+            </EditText>
+            <LinearLayout
+                android:background="#1D1D1D"
+                android:layout_marginTop="20dip"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:layout_width="fill_parent"
+                android:layout_height="0.1dip">
+
+            </LinearLayout>
+            <EditText
+                android:textSize="15dip"
+                android:paddingLeft="10dip"
+                android:text="@={myViewModel.inputDescription}"
+                android:fontFamily="@font/opensans_regular"
+                android:id="@+id/text_content"
+                android:textColor="#1D1D1D"
+                android:minHeight="40dip"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:layout_marginTop="20dip"
+                android:hint="Content"
+                android:background="@android:color/transparent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+            </EditText>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+</layout>

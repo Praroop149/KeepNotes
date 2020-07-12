@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="80dip">
+            <TextView
+                android:textSize="35dip"
+                android:text="BioMetric Password"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dip"
+                android:textColor="@color/text_clour"
+                android:fontFamily="@font/opensans_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+            <Switch
+
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dip"
+                android:id="@+id/switch1"
+                android:layout_width="100dip"
+                android:layout_height="100dip"
+                android:text=""/>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</layout>
